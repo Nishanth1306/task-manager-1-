@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table</title>
+<style>
+  body {
+    margin: 0; 
+  }
+  #yes{
+    background-color: red;
+  }
+  #edit{
+    background-color: green;
+  }
+  #full {
+    background-image: url("back.jpg");
+    background-size: cover; 
+    height: 100vh; 
+  }
+  #timer, #main, #addtask {
+    padding: 1rem;
+  }
+  #main {
+    display: flex; 
+    flex-wrap: wrap; 
+  }
+  #outer, #secbutton, #dropdown, #box, #addtask {
+    flex: 1; /* Make these elements flexible within the main container */
+  }
+  #data-table {
+    width: 100%; /* Set table width to 100% */
+  }
+  #addtask form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+  }
+  #addtask label, #addtask input {
+    margin-bottom: 0.5rem; /* Add spacing between form elements */
+  }
+  /* Add media queries for specific breakpoints as needed */
+</style>
+</head>
+<body id="full">
+  <div id="timer">
+    <span>Timer</span>
+    <div id="timedisplay">00:00:00</div>
+    <button id="start">Start</button>
+    <button id="start1">Pause</button>
+    <button id="start2">Reset</button>
+  </div>
+  <div id="main">
+    <div id="outer"></div>
+    <div id="secbutton"></div>
+    <div id="dropdown">
+      <form action="#" id="taskform">
+        <label for="task">Filter:</label>
+        <select id="tasklist" name="cars">
+          <option value="Task">All Events</option>
+          <option value="Project">Project - abs</option>
+          <option value="break">Personal Break</option>
+          <option value="Meeting">Meeting</option>
+          <option value="games">Games</option>
+        </select>
+      </form>
+    </div>
+    <div id="box">
+      <table id="data-table">
+        <thead>
+          <tr id="row">
+            <th>Task</th>
+            <th>Description</th>
+            <th>Duration</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody id="col">
+          </tbody>
+      </table>
+    </div>
+  </div>
+  <br>
+  <div id="addtask">
+    <span id="text">Add New Task</span>
+    <br>
+    <br>
+    <form action="#" id="addtaskform" onsubmit="return validateForm()"> <label for="fname">Task:</label><br>
+      <input type="text" id="fname" name="fname" required><br> <br>
+      <label for="lname">Description:</label><br>
+      <input type="text" id="lname" name="lname" required><br><br>
+      <label for="duration">Duration:</label><br>
+      <input type="text" id="duration" name="duration" required><br><br>
+      <input type="submit" id="addtaskbtn" value="Add Task">
+    </form>
+  </div>
+  <script src="final.js"></script>
+</body>
+</html>
